@@ -1,54 +1,213 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <title>Conecta Influencers</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        body { font-family: Arial, sans-serif; padding: 2rem; background: #f7f7f7; }
-        .container { max-width: 600px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
-        h1 { color: #3b3b3b; text-align: center; }
-        .section { margin-bottom: 2rem; }
-        label { display: block; margin-top: 1rem; }
-        input, select, textarea { width: 100%; padding: 0.5rem; margin-top: 0.2rem; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: #1da1f2; color: white; padding: 0.7rem 2rem; border: none; border-radius: 4px; cursor: pointer; margin-top: 1rem;}
-        button:hover { background: #198fd0; }
-        .info { background: #eaf6ff; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
-    </style>
+  <meta charset="UTF-8">
+  <title>MatchBrand - Conectamos marcas con creadores</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background: linear-gradient(135deg, #eaf6ff 0%, #fbefff 100%);
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      min-height: 100vh;
+    }
+    .main-container {
+      max-width: 420px;
+      margin: 40px auto;
+      background: #fff;
+      border-radius: 16px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.11);
+      padding: 2.5rem 2rem 2rem 2rem;
+      text-align: center;
+    }
+    h1 {
+      color: #3b168b;
+      font-size: 2.1rem;
+      margin-bottom: 0.3em;
+      letter-spacing: -1px;
+    }
+    .subtitle {
+      color: #222;
+      font-size: 1.1rem;
+      margin-bottom: 1.5em;
+    }
+    .question {
+      font-size: 1.13rem;
+      margin: 1.1em 0 0.5em 0;
+      color: #3b168b;
+      font-weight: 600;
+    }
+    .role-btns {
+      display: flex;
+      justify-content: center;
+      gap: 1.2em;
+      margin: 1.5em 0 1.5em 0;
+    }
+    .role-btn {
+      background: #f6f1fe;
+      border: 2px solid #a38bfa;
+      color: #3b168b;
+      font-weight: bold;
+      border-radius: 8px;
+      padding: 0.9em 1.3em;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s, border 0.2s;
+    }
+    .role-btn:hover, .role-btn.selected {
+      background: #a38bfa;
+      color: #fff;
+      border-color: #3b168b;
+    }
+    .explora {
+      font-size: 1.04rem;
+      margin: 0.8em 0 2em 0;
+      color: #333;
+      background: #eaf6ff;
+      border-radius: 6px;
+      padding: 0.8em 0.5em;
+      font-style: italic;
+      letter-spacing: 0.2px;
+    }
+    .demo-form {
+      text-align: left;
+      background: #f7f3fa;
+      border-radius: 10px;
+      padding: 1.3em 1em;
+      margin-top: 1.5em;
+    }
+    .demo-form label {
+      font-weight: 500;
+      margin-top: 0.8em;
+      display: block;
+      color: #3b168b;
+    }
+    .demo-form input,
+    .demo-form select,
+    .demo-form textarea {
+      width: 100%;
+      padding: 0.5em;
+      margin-top: 0.2em;
+      margin-bottom: 0.5em;
+      border: 1px solid #b3a7d6;
+      border-radius: 5px;
+      font-size: 1em;
+      background: #fff;
+    }
+    .demo-form .row {
+      display: flex;
+      gap: 0.8em;
+    }
+    .demo-form .row > div {
+      flex: 1;
+    }
+    .demo-form button {
+      background: #3b168b;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      padding: 0.7em 2em;
+      margin-top: 1em;
+      font-size: 1.05em;
+      cursor: not-allowed;
+      opacity: 0.7;
+    }
+    .demo-form .info {
+      font-size: 0.92em;
+      color: #888;
+      margin-top: 0.7em;
+    }
+    @media (max-width: 600px) {
+      .main-container { padding: 1.2rem 0.5rem; }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Conecta Influencers</h1>
-        <div class="info">
-            <p><strong>¡Bienvenido!</strong><br>
-            Plataforma para conectar <b>marcas</b> con <b>influencers</b> y crear colaboraciones exitosas.</p>
-        </div>
-        <div class="section">
-            <h2>Regístrate</h2>
-            <form>
-                <label for="type">Soy:</label>
-                <select id="type" name="type">
-                    <option value="influencer">Influencer</option>
-                    <option value="marca">Marca</option>
-                </select>
-                <label for="name">Nombre o Marca:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="contact">Email de contacto:</label>
-                <input type="email" id="contact" name="contact" required>
-                <label for="desc">Cuéntanos sobre ti / tu marca:</label>
-                <textarea id="desc" name="desc" rows="3"></textarea>
-                <button type="submit" disabled>Enviar (próximamente)</button>
-            </form>
-            <p style="color:#888; font-size:0.9em;">*Esto es solo una demo visual. El formulario será funcional próximamente.</p>
-        </div>
-        <div class="section">
-            <h2>¿Cómo funciona?</h2>
-            <ul>
-                <li>Marcas publican campañas o buscan influencers.</li>
-                <li>Influencers encuentran oportunidades y colaboran.</li>
-                <li>¡Fácil, rápido y seguro!</li>
-            </ul>
-        </div>
+  <div class="main-container">
+    <h1>Bienvenido a MatchBrand</h1>
+    <div class="subtitle">
+      Conectamos marcas con creadores de contenido de forma <b>rápida</b>, <b>simple</b> y <b>estratégica</b>.
     </div>
+    <div class="question">
+      ¿Sos una empresa buscando el influencer ideal?<br>
+      ¿O sos creador de contenido y querés postularte a campañas?
+    </div>
+    <div class="explora">
+      🚀 Explorá. Filtrá. Conectá.<br>
+      <span style="font-size:1em;font-weight:500;display:block;margin-top:0.4em;">Empezá eligiendo tu rol para continuar 👉</span>
+    </div>
+    <div class="role-btns">
+      <button class="role-btn" id="marcaBtn">Marca</button>
+      <button class="role-btn" id="influencerBtn">Creador de contenido</button>
+    </div>
+    <div id="formArea"></div>
+  </div>
+  <script>
+    const marcaBtn = document.getElementById('marcaBtn');
+    const influencerBtn = document.getElementById('influencerBtn');
+    const formArea = document.getElementById('formArea');
+
+    function clearSelection() {
+      marcaBtn.classList.remove('selected');
+      influencerBtn.classList.remove('selected');
+      formArea.innerHTML = '';
+    }
+
+    marcaBtn.onclick = function() {
+      clearSelection();
+      marcaBtn.classList.add('selected');
+      formArea.innerHTML = `
+        <form class="demo-form">
+          <div style="font-weight:600;color:#3b168b;margin-bottom:0.5em;">Registro de Marca</div>
+          <label>Nombre de empresa</label>
+          <input type="text" placeholder="Ej: Coca-Cola, Nike..." required>
+          <label>Email de contacto</label>
+          <input type="email" placeholder="ejemplo@email.com" required>
+          <label>¿Qué tipo de influencers buscas?</label>
+          <input type="text" placeholder="Ej: Moda, Fitness, Gaming...">
+          <label>Descripción de campaña ideal</label>
+          <textarea rows="3" placeholder="Describe brevemente tu campaña o necesidades"></textarea>
+          <button type="submit" disabled>Registrarme (demo)</button>
+          <div class="info">*Formulario no funcional, solo demo visual.</div>
+        </form>
+      `;
+    };
+
+    influencerBtn.onclick = function() {
+      clearSelection();
+      influencerBtn.classList.add('selected');
+      formArea.innerHTML = `
+        <form class="demo-form">
+          <div style="font-weight:600;color:#3b168b;margin-bottom:0.5em;">Registro de Creador de Contenido</div>
+          <label>Nombre</label>
+          <input type="text" placeholder="Tu nombre o usuario" required>
+          <label>Email</label>
+          <input type="email" placeholder="ejemplo@email.com" required>
+          <div class="row">
+            <div>
+              <label>Seguidores</label>
+              <input type="number" min="0" placeholder="Ej: 5000">
+            </div>
+            <div>
+              <label>Red principal</label>
+              <select>
+                <option>Instagram</option>
+                <option>TikTok</option>
+                <option>YouTube</option>
+                <option>Twitch</option>
+                <option>Otra</option>
+              </select>
+            </div>
+          </div>
+          <label>Ubicación</label>
+          <input type="text" placeholder="Ciudad o país">
+          <label>Estilo o nicho</label>
+          <input type="text" placeholder="Ej: Lifestyle, viajes, deportes...">
+          <button type="submit" disabled>Registrarme (demo)</button>
+          <div class="info">*Formulario no funcional, solo demo visual.</div>
+        </form>
+      `;
+    };
+  </script>
 </body>
 </html>
