@@ -12,7 +12,7 @@
       min-height: 100vh;
     }
     .main-container {
-      max-width: 420px;
+      max-width: 440px;
       margin: 40px auto;
       background: #fff;
       border-radius: 16px;
@@ -69,6 +69,61 @@
       font-style: italic;
       letter-spacing: 0.2px;
     }
+    .motivation {
+      margin: 1.5em 0 1.2em 0;
+      color: #3b168b;
+      background: #f9f3fd;
+      border-radius: 7px;
+      padding: 0.8em 0.5em;
+      font-size: 1.04em;
+      font-weight: 500;
+    }
+    .campanias-section {
+      background: #f7f3fa;
+      border-radius: 10px;
+      margin: 2em 0 1.5em 0;
+      padding: 1.3em 1em;
+      text-align: left;
+    }
+    .campanias-title {
+      color: #3b168b;
+      font-weight: bold;
+      font-size: 1.1em;
+      margin-bottom: 0.7em;
+      text-align: center;
+    }
+    .campania {
+      background: #fff;
+      border: 1px solid #e6e2fc;
+      border-radius: 7px;
+      margin-bottom: 1em;
+      padding: 0.7em 1em;
+      transition: box-shadow 0.2s;
+    }
+    .campania:hover {
+      box-shadow: 0 2px 8px #e0cafd55;
+    }
+    .campania-nombre {
+      color: #3b168b;
+      font-weight: 600;
+      font-size: 1em;
+    }
+    .campania-detalle {
+      font-size: 0.97em;
+      color: #444;
+      margin: 0.3em 0;
+    }
+    .campania-btn {
+      background: #1da1f2;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.4em 1.1em;
+      font-size: 0.95em;
+      cursor: not-allowed;
+      opacity: 0.7;
+      margin-top: 0.4em;
+    }
     .demo-form {
       text-align: left;
       background: #f7f3fa;
@@ -117,6 +172,60 @@
       color: #888;
       margin-top: 0.7em;
     }
+    .encuesta-section {
+      margin-top: 2.5em;
+      background: #eaf6ff;
+      border-radius: 9px;
+      padding: 1.2em 1em 1.6em 1em;
+      text-align: left;
+    }
+    .encuesta-title {
+      color: #3b168b;
+      font-weight: bold;
+      font-size: 1.08em;
+      margin-bottom: 0.6em;
+      text-align: center;
+    }
+    .encuesta-label {
+      margin-bottom: 0.5em;
+      display: block;
+      color: #222;
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .encuesta-range {
+      width: 100%;
+      margin-bottom: 0.6em;
+    }
+    .encuesta-textarea {
+      width: 100%;
+      border-radius: 5px;
+      border: 1px solid #b3a7d6;
+      padding: 0.5em;
+      margin-bottom: 0.7em;
+      font-size: 1em;
+      background: #fff;
+    }
+    .encuesta-btn {
+      background: #1da1f2;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 0.55em 1.3em;
+      font-size: 1em;
+      cursor: not-allowed;
+      opacity: 0.7;
+      margin-top: 0.5em;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .encuesta-info {
+      color: #888;
+      font-size: 0.92em;
+      text-align: center;
+      margin-top: 0.6em;
+    }
     @media (max-width: 600px) {
       .main-container { padding: 1.2rem 0.5rem; }
     }
@@ -140,22 +249,76 @@
       <button class="role-btn" id="marcaBtn">Marca</button>
       <button class="role-btn" id="influencerBtn">Creador de contenido</button>
     </div>
+
+    <div class="motivation" id="motivationMsg">
+      ¡Completá tu registro y accedé a campañas exclusivas, networking con marcas y oportunidades únicas para potenciar tu crecimiento!
+    </div>
+
+    <div class="campanias-section">
+      <div class="campanias-title">Campañas abiertas para postularse</div>
+      <div class="campania">
+        <div class="campania-nombre">🌟 Lanza tu verano con Sprite</div>
+        <div class="campania-detalle">
+          Buscamos creadores jóvenes y frescos para promocionar Sprite en redes sociales. <br>
+          <b>Segmento:</b> Lifestyle, entretenimiento<br>
+          <b>Locación:</b> Argentina y Uruguay<br>
+          <b>Seguidores:</b> 5.000+
+        </div>
+        <button class="campania-btn" disabled>Postularme (demo)</button>
+      </div>
+      <div class="campania">
+        <div class="campania-nombre">🏋️‍♀️ Reto Fitness Nike</div>
+        <div class="campania-detalle">
+          Influencers fitness que motiven a moverse con Nike. <br>
+          <b>Segmento:</b> Fitness, deporte<br>
+          <b>Locación:</b> Latam<br>
+          <b>Seguidores:</b> 10.000+
+        </div>
+        <button class="campania-btn" disabled>Postularme (demo)</button>
+      </div>
+      <div class="campania">
+        <div class="campania-nombre">🍽️ Sabor a Casa - Knorr</div>
+        <div class="campania-detalle">
+          Campaña para foodies y cocineros/as caseros. <br>
+          <b>Segmento:</b> Gastronomía, recetas<br>
+          <b>Locación:</b> Todo el país<br>
+          <b>Seguidores:</b> 2.000+
+        </div>
+        <button class="campania-btn" disabled>Postularme (demo)</button>
+      </div>
+    </div>
+
     <div id="formArea"></div>
+
+    <div class="encuesta-section">
+      <div class="encuesta-title">Encuesta de satisfacción</div>
+      <form>
+        <label class="encuesta-label">¿Qué tan satisfecho/a estás con tu experiencia en MatchBrand? (1 = Nada, 5 = Excelente)</label>
+        <input type="range" min="1" max="5" value="3" class="encuesta-range" disabled>
+        <label class="encuesta-label" style="margin-top:1em;">¿Le agregarías algo a la plataforma?</label>
+        <textarea class="encuesta-textarea" rows="2" placeholder="Tu sugerencia..." disabled></textarea>
+        <button class="encuesta-btn" disabled>Enviar (solo demo)</button>
+      </form>
+      <div class="encuesta-info">*Encuesta demo, los datos no se envían.</div>
+    </div>
   </div>
   <script>
     const marcaBtn = document.getElementById('marcaBtn');
     const influencerBtn = document.getElementById('influencerBtn');
     const formArea = document.getElementById('formArea');
+    const motivationMsg = document.getElementById('motivationMsg');
 
     function clearSelection() {
       marcaBtn.classList.remove('selected');
       influencerBtn.classList.remove('selected');
       formArea.innerHTML = '';
+      motivationMsg.innerHTML = '¡Completá tu registro y accedé a campañas exclusivas, networking con marcas y oportunidades únicas para potenciar tu crecimiento!';
     }
 
     marcaBtn.onclick = function() {
       clearSelection();
       marcaBtn.classList.add('selected');
+      motivationMsg.innerHTML = '¡Solo faltan unos datos para empezar a filtrar influencers y publicar campañas!';
       formArea.innerHTML = `
         <form class="demo-form">
           <div style="font-weight:600;color:#3b168b;margin-bottom:0.5em;">Registro de Marca</div>
@@ -176,6 +339,7 @@
     influencerBtn.onclick = function() {
       clearSelection();
       influencerBtn.classList.add('selected');
+      motivationMsg.innerHTML = '¡Estás a un paso de postularte a campañas que encajen con tu estilo!';
       formArea.innerHTML = `
         <form class="demo-form">
           <div style="font-weight:600;color:#3b168b;margin-bottom:0.5em;">Registro de Creador de Contenido</div>
