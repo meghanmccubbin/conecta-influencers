@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Conecta Influencers</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body { font-family: Arial, sans-serif; padding: 2rem; background: #f7f7f7; }
+        .container { max-width: 600px; margin: auto; background: #fff; padding: 2rem; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);}
+        h1 { color: #3b3b3b; text-align: center; }
+        .section { margin-bottom: 2rem; }
+        label { display: block; margin-top: 1rem; }
+        input, select, textarea { width: 100%; padding: 0.5rem; margin-top: 0.2rem; border: 1px solid #ccc; border-radius: 4px; }
+        button { background: #1da1f2; color: white; padding: 0.7rem 2rem; border: none; border-radius: 4px; cursor: pointer; margin-top: 1rem;}
+        button:hover { background: #198fd0; }
+        .info { background: #eaf6ff; padding: 1rem; border-radius: 4px; margin-bottom: 2rem; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Conecta Influencers</h1>
+        <div class="info">
+            <p><strong>¡Bienvenido!</strong><br>
+            Plataforma para conectar <b>marcas</b> con <b>influencers</b> y crear colaboraciones exitosas.</p>
+        </div>
+        <div class="section">
+            <h2>Regístrate</h2>
+            <form>
+                <label for="type">Soy:</label>
+                <select id="type" name="type">
+                    <option value="influencer">Influencer</option>
+                    <option value="marca">Marca</option>
+                </select>
+                <label for="name">Nombre o Marca:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="contact">Email de contacto:</label>
+                <input type="email" id="contact" name="contact" required>
+                <label for="desc">Cuéntanos sobre ti / tu marca:</label>
+                <textarea id="desc" name="desc" rows="3"></textarea>
+                <button type="submit" disabled>Enviar (próximamente)</button>
+            </form>
+            <p style="color:#888; font-size:0.9em;">*Esto es solo una demo visual. El formulario será funcional próximamente.</p>
+        </div>
+        <div class="section">
+            <h2>¿Cómo funciona?</h2>
+            <ul>
+                <li>Marcas publican campañas o buscan influencers.</li>
+                <li>Influencers encuentran oportunidades y colaboran.</li>
+                <li>¡Fácil, rápido y seguro!</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
