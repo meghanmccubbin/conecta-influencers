@@ -164,6 +164,11 @@
       padding: 0.7em 2em;
       margin-top: 1em;
       font-size: 1.05em;
+      cursor: pointer;
+      opacity: 1;
+      transition: background 0.2s;
+    }
+    .demo-form button[disabled] {
       cursor: not-allowed;
       opacity: 0.7;
     }
@@ -213,12 +218,17 @@
       border-radius: 4px;
       padding: 0.55em 1.3em;
       font-size: 1em;
-      cursor: not-allowed;
-      opacity: 0.7;
+      cursor: pointer;
       margin-top: 0.5em;
       display: block;
       margin-left: auto;
       margin-right: auto;
+      opacity: 1;
+      transition: background 0.2s;
+    }
+    .encuesta-btn[disabled] {
+      opacity: 0.7;
+      cursor: not-allowed;
     }
     .encuesta-info {
       color: #888;
@@ -232,74 +242,74 @@
   </style>
 </head>
 <body>
-  <div class="main-container">
+  <div class="main-container" id="mainContainer">
     <h1>Bienvenido a MatchBrand</h1>
     <div class="subtitle">
       Conectamos marcas con creadores de contenido de forma <b>rápida</b>, <b>simple</b> y <b>estratégica</b>.
     </div>
-    <div class="question">
-      ¿Sos una empresa buscando el influencer ideal?<br>
-      ¿O sos creador de contenido y querés postularte a campañas?
-    </div>
-    <div class="explora">
-      🚀 Explorá. Filtrá. Conectá.<br>
-      <span style="font-size:1em;font-weight:500;display:block;margin-top:0.4em;">Empezá eligiendo tu rol para continuar 👉</span>
-    </div>
-    <div class="role-btns">
-      <button class="role-btn" id="marcaBtn">Marca</button>
-      <button class="role-btn" id="influencerBtn">Creador de contenido</button>
-    </div>
-
-    <div class="motivation" id="motivationMsg">
-      ¡Completá tu registro y accedé a campañas exclusivas, networking con marcas y oportunidades únicas para potenciar tu crecimiento!
-    </div>
-
-    <div class="campanias-section">
-      <div class="campanias-title">Campañas abiertas para postularse</div>
-      <div class="campania">
-        <div class="campania-nombre">🌟 Lanza tu verano con Sprite</div>
-        <div class="campania-detalle">
-          Buscamos creadores jóvenes y frescos para promocionar Sprite en redes sociales. <br>
-          <b>Segmento:</b> Lifestyle, entretenimiento<br>
-          <b>Locación:</b> Argentina y Uruguay<br>
-          <b>Seguidores:</b> 5.000+
-        </div>
-        <button class="campania-btn" disabled>Postularme (demo)</button>
+    <div id="registroSection">
+      <div class="question">
+        ¿Sos una empresa buscando el influencer ideal?<br>
+        ¿O sos creador de contenido y querés postularte a campañas?
       </div>
-      <div class="campania">
-        <div class="campania-nombre">🏋️‍♀️ Reto Fitness Nike</div>
-        <div class="campania-detalle">
-          Influencers fitness que motiven a moverse con Nike. <br>
-          <b>Segmento:</b> Fitness, deporte<br>
-          <b>Locación:</b> Latam<br>
-          <b>Seguidores:</b> 10.000+
-        </div>
-        <button class="campania-btn" disabled>Postularme (demo)</button>
+      <div class="explora">
+        🚀 Explorá. Filtrá. Conectá.<br>
+        <span style="font-size:1em;font-weight:500;display:block;margin-top:0.4em;">Empezá eligiendo tu rol para continuar 👉</span>
       </div>
-      <div class="campania">
-        <div class="campania-nombre">🍽️ Sabor a Casa - Knorr</div>
-        <div class="campania-detalle">
-          Campaña para foodies y cocineros/as caseros. <br>
-          <b>Segmento:</b> Gastronomía, recetas<br>
-          <b>Locación:</b> Todo el país<br>
-          <b>Seguidores:</b> 2.000+
-        </div>
-        <button class="campania-btn" disabled>Postularme (demo)</button>
+      <div class="role-btns">
+        <button class="role-btn" id="marcaBtn">Marca</button>
+        <button class="role-btn" id="influencerBtn">Creador de contenido</button>
       </div>
+      <div class="motivation" id="motivationMsg">
+        ¡Completá tu registro y accedé a campañas exclusivas, networking con marcas y oportunidades únicas para potenciar tu crecimiento!
+      </div>
+      <div id="formArea"></div>
     </div>
-
-    <div id="formArea"></div>
-
-    <div class="encuesta-section">
-      <div class="encuesta-title">Encuesta de satisfacción</div>
-      <form>
-        <label class="encuesta-label">¿Qué tan satisfecho/a estás con tu experiencia en MatchBrand? (1 = Nada, 5 = Excelente)</label>
-        <input type="range" min="1" max="5" value="3" class="encuesta-range" disabled>
-        <label class="encuesta-label" style="margin-top:1em;">¿Le agregarías algo a la plataforma?</label>
-        <textarea class="encuesta-textarea" rows="2" placeholder="Tu sugerencia..." disabled></textarea>
-        <button class="encuesta-btn" disabled>Enviar (solo demo)</button>
-      </form>
-      <div class="encuesta-info">*Encuesta demo, los datos no se envían.</div>
+    <div id="mainContent" style="display:none;">
+      <div class="campanias-section">
+        <div class="campanias-title">Campañas abiertas para postularse</div>
+        <div class="campania">
+          <div class="campania-nombre">🌟 Lanza tu verano con Sprite</div>
+          <div class="campania-detalle">
+            Buscamos creadores jóvenes y frescos para promocionar Sprite en redes sociales. <br>
+            <b>Segmento:</b> Lifestyle, entretenimiento<br>
+            <b>Locación:</b> Argentina y Uruguay<br>
+            <b>Seguidores:</b> 5.000+
+          </div>
+          <button class="campania-btn" disabled>Postularme (demo)</button>
+        </div>
+        <div class="campania">
+          <div class="campania-nombre">🏋️‍♀️ Reto Fitness Nike</div>
+          <div class="campania-detalle">
+            Influencers fitness que motiven a moverse con Nike. <br>
+            <b>Segmento:</b> Fitness, deporte<br>
+            <b>Locación:</b> Latam<br>
+            <b>Seguidores:</b> 10.000+
+          </div>
+          <button class="campania-btn" disabled>Postularme (demo)</button>
+        </div>
+        <div class="campania">
+          <div class="campania-nombre">🍽️ Sabor a Casa - Knorr</div>
+          <div class="campania-detalle">
+            Campaña para foodies y cocineros/as caseros. <br>
+            <b>Segmento:</b> Gastronomía, recetas<br>
+            <b>Locación:</b> Todo el país<br>
+            <b>Seguidores:</b> 2.000+
+          </div>
+          <button class="campania-btn" disabled>Postularme (demo)</button>
+        </div>
+      </div>
+      <div class="encuesta-section">
+        <div class="encuesta-title">Encuesta de satisfacción</div>
+        <form>
+          <label class="encuesta-label">¿Qué tan satisfecho/a estás con tu experiencia en MatchBrand? (1 = Nada, 5 = Excelente)</label>
+          <input type="range" min="1" max="5" value="3" class="encuesta-range" disabled>
+          <label class="encuesta-label" style="margin-top:1em;">¿Le agregarías algo a la plataforma?</label>
+          <textarea class="encuesta-textarea" rows="2" placeholder="Tu sugerencia..." disabled></textarea>
+          <button class="encuesta-btn" disabled>Enviar (solo demo)</button>
+        </form>
+        <div class="encuesta-info">*Encuesta demo, los datos no se envían.</div>
+      </div>
     </div>
   </div>
   <script>
@@ -307,20 +317,26 @@
     const influencerBtn = document.getElementById('influencerBtn');
     const formArea = document.getElementById('formArea');
     const motivationMsg = document.getElementById('motivationMsg');
+    const registroSection = document.getElementById('registroSection');
+    const mainContent = document.getElementById('mainContent');
+
+    let selectedRole = null;
 
     function clearSelection() {
       marcaBtn.classList.remove('selected');
       influencerBtn.classList.remove('selected');
       formArea.innerHTML = '';
       motivationMsg.innerHTML = '¡Completá tu registro y accedé a campañas exclusivas, networking con marcas y oportunidades únicas para potenciar tu crecimiento!';
+      selectedRole = null;
     }
 
     marcaBtn.onclick = function() {
       clearSelection();
       marcaBtn.classList.add('selected');
       motivationMsg.innerHTML = '¡Solo faltan unos datos para empezar a filtrar influencers y publicar campañas!';
+      selectedRole = 'marca';
       formArea.innerHTML = `
-        <form class="demo-form">
+        <form class="demo-form" id="marcaForm">
           <div style="font-weight:600;color:#3b168b;margin-bottom:0.5em;">Registro de Marca</div>
           <label>Nombre de empresa</label>
           <input type="text" placeholder="Ej: Coca-Cola, Nike..." required>
@@ -330,18 +346,20 @@
           <input type="text" placeholder="Ej: Moda, Fitness, Gaming...">
           <label>Descripción de campaña ideal</label>
           <textarea rows="3" placeholder="Describe brevemente tu campaña o necesidades"></textarea>
-          <button type="submit" disabled>Registrarme (demo)</button>
-          <div class="info">*Formulario no funcional, solo demo visual.</div>
+          <button type="submit">Registrarme</button>
+          <div class="info">*Formulario de prueba, no se guarda la información real.</div>
         </form>
       `;
+      setFormSubmit();
     };
 
     influencerBtn.onclick = function() {
       clearSelection();
       influencerBtn.classList.add('selected');
       motivationMsg.innerHTML = '¡Estás a un paso de postularte a campañas que encajen con tu estilo!';
+      selectedRole = 'influencer';
       formArea.innerHTML = `
-        <form class="demo-form">
+        <form class="demo-form" id="influencerForm">
           <div style="font-weight:600;color:#3b168b;margin-bottom:0.5em;">Registro de Creador de Contenido</div>
           <label>Nombre</label>
           <input type="text" placeholder="Tu nombre o usuario" required>
@@ -367,11 +385,29 @@
           <input type="text" placeholder="Ciudad o país">
           <label>Estilo o nicho</label>
           <input type="text" placeholder="Ej: Lifestyle, viajes, deportes...">
-          <button type="submit" disabled>Registrarme (demo)</button>
-          <div class="info">*Formulario no funcional, solo demo visual.</div>
+          <button type="submit">Registrarme</button>
+          <div class="info">*Formulario de prueba, no se guarda la información real.</div>
         </form>
       `;
+      setFormSubmit();
     };
+
+    function setFormSubmit() {
+      // Espera a que el DOM agregue el formulario
+      setTimeout(() => {
+        const form = formArea.querySelector('form');
+        if (form) {
+          form.onsubmit = function(e) {
+            e.preventDefault();
+            // Oculta registro, muestra campañas y encuesta
+            registroSection.style.display = 'none';
+            mainContent.style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            return false;
+          }
+        }
+      }, 10);
+    }
   </script>
 </body>
 </html>
